@@ -205,7 +205,7 @@ class NotificationManager
             return $exceptionResponse;
         }
 
-        $responseData = json_decode($response->getBody()->read(1024), true);
+        $responseData = json_decode((string) $response->getBody(), true);
 
         return $responseData['data'][0];
     }
@@ -281,7 +281,7 @@ class NotificationManager
             return $exceptionResponseArray;
         }
 
-        $responseData = json_decode($response->getBody()->read(1024), true);
+        $responseData = json_decode((string) $response->getBody(), true);
 
         return $responseData['data'];
     }
